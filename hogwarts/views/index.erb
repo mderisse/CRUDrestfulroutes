@@ -1,0 +1,20 @@
+<html>
+	<body>
+		<header>
+			<h1>petulance</h1>
+		</header>
+
+		<ul>
+        <%pets.each do |key, pet|%>
+        <li><%= pet[:name]%> is a <%= pet[:type]%>. this pet has an id of <a href="/pet/<%= pet[:id] %>"><%= pet[:id]%></a>.</li>
+        <% end %>
+        </ul>
+
+        <h3>add a pet here:</h3>
+        <form action="/pet" method="post">
+        	<input type="text" name = "name" placeholder="pet name" required>
+            <input type="text" name = "type" placeholder="pet type" required>
+            <button>add it</button>
+        </form>
+	</body>
+</html>
